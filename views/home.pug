@@ -7,7 +7,9 @@ block content
 					img.ml-2.mb-2(src=user.image ,alt=user.fullname)
 					span.ml-2 #{user.fullname}
 				.form-group
-					textarea.form-control.body(name='body', maxlength='120', placeholder='Share an update')
+					textarea.form-control.body(name='description', maxlength='120', placeholder='describe your deed')
+				.form-group
+					textarea.form-control.body(name='experience', maxlength='120', placeholder='Share your experience')
 				.form-group
 					label.px-2(for='upload', name='uploadPost')
 						i.fa.fa-camera.mr-2

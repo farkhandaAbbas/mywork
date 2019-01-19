@@ -9,9 +9,14 @@
 				span.time(style='font-weight:100') #{moment(posts[i].date).format('ll')}
 				// <span class="ml-1"><i class="fa fa-ellipsis-v"></i></span>
 		.post-body.mt-2
-			a(href='/post/'+ posts[i]._id, style='display:block;')
+			a(href='/post/'+posts[i]._id, style='display:block;')
 				img.img-fluid(src='/images/posts/'+posts[i].image, alt=posts[i].owner.fullname)
-			p.lead.mt-2 #{posts[i].body}
+			br
+			h5 Description
+				p.lead.mt-2 #{posts[i].description}
+			h5 Experience
+				p.lead.mt-2 #{posts[i].experience}
+
 		.post-footer.py-2.px-2
 			.row
 				.col-8

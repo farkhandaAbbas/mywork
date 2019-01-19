@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var Schema  = mongoose.Schema;
 
 var postSchema = new Schema({
-	body  : {type:String,trim:true},
+	description  : {type:String,trim:true},
+	experience:{type:String,trim:true},
 	image : {type:String,trim:true},
 	likes : Array,
 	comments : [{

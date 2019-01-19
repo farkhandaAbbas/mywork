@@ -48,7 +48,8 @@ router.get('/post/:id',function(req,res,next){
 
 /* POST save */
 router.post('/savepost',upload.single('upload'),function(req,res,next){
-	var body = req.body.body;
+	var description = req.body.description;
+	var experience=req.body.experience;
 	var file = req.file;
 	// console.log(file)
 
@@ -61,7 +62,8 @@ router.post('/savepost',upload.single('upload'),function(req,res,next){
 	async.waterfall([
 		function(callback){
 			var newPost = new Post();
-				newPost.body = body.trim();
+				newPost.experience = experience.trim();
+				newPost.description = description.trim();
 				newPost.image = file.filename;
 				newPost.owner = userdata;
 				newPost.save((err,data) => {
@@ -76,7 +78,8 @@ router.post('/savepost',upload.single('upload'),function(req,res,next){
 					{ 
 						posts: {
 							post  : data._id,
-							body  : data.body,
+							description  : data.description,
+							experience : data.experience,
 							image : data.image
 						} 
 					}

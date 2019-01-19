@@ -469,7 +469,8 @@ function savePost(e){
                       <a href="/post/${post._id}" style="display:block;">
                         <img src="../images/posts/${post.image}" alt="<%= ${post.owner.fullname} %>" class="img-fluid">
                       </a>
-                        <p class="lead mt-2">${post.body}</p>
+                        <p class="lead mt-2">${post.description}</p>
+                        <p class="lead mt-2">${post.experience}</p>
                     </div>
                     <div class="post-footer py-2 px-2">
                         <div class="row">

@@ -24,7 +24,7 @@ var session = require('express-session');
 var mongoose = require('mongoose');
 var mongoStore = require('connect-mongo')(session);
 
-mongoose.connect("mongodb://localhost/socialsite");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/socialsite");
 mongoose.Promise = global.Promise;
 
 var db = mongoose.connection;
