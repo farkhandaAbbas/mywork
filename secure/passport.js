@@ -48,7 +48,7 @@ passport.use('local.login',new localStrategy({
 passport.use(new facebookStrategy({
   clientID: get.fbID,
   clientSecret: get.fbSecret,
-  callbackURL: "https://testingmode.herokuapp.com/auth/facebook/callback",
+  callbackURL: "http://localhost:5000/auth/facebook/callback",
   profileFields: ['id', 'displayName', 'email','picture.type(large)'],
   passReqToCallback : true
 },(req,accessToken,refreshToken,profile,done) => {

@@ -57,7 +57,7 @@ router.get('/home',middleware.isAllowed,function(req, res, next) {
   	  	header:true,
   	  	navbar:true,
   	  	user:req.user,
-  	  	isImage:req.user.image,
+  	  	isImage:req.user.image.includes("http"),
   	  	posts:post,single:false});
   }).sort({'date': -1});
 });
@@ -88,7 +88,7 @@ router.get('/update',middleware.isAllowed,function(req,res,next){
 	  	 	header:true,
 	  	 	navbar:true,
 	  	 	user:data,
-	  	 	isImage:req.user.image});
+	  	 	isImage:req.user.image.includes("http")});
 	  }).catch(function(err){
 	  	next(err);
 	  });
