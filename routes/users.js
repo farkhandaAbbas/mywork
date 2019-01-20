@@ -70,7 +70,8 @@ router.get('/profile/:id',middleware.isAllowed,function(req,res,next){
 	  	  	title:"Community Network",
 	  	  	header:true,
 	  	  	navbar:true,
-	  	  	user:data,allow: (req.user._id == data._id),
+	  	  	user:data,
+	  	  	allow: (req.user._id == data._id),
 	  	  	isFollow:data.followers.find(user => user == req.user._id )});
 	  }).catch(function(err){
 	  	next(err);
